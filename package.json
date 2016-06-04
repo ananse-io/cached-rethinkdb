@@ -1,0 +1,36 @@
+{
+  "name": "cached-rethinkdb",
+  "version": "1.0.0",
+  "description": "Redis-cached rethinkDB",
+  "main": "./lib/cached-database.js",
+  "scripts": {
+    "test": "mocha",
+    "coverage": "istanbul _mocha"
+  },
+  "author": "Beda Tse <beda@cow.hk>",
+  "repository": {
+    "type": "git",
+    "url": "bitbucket:ananse/opensource-cachedb.git"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bluebird": "^3.4.0",
+    "redis": "^2.6.1",
+    "rethinkdb": "^2.3.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "esformatter": "^0.9.4",
+    "esformatter-add-trailing-commas": "^1.1.0",
+    "esformatter-curly": "0.0.1",
+    "esformatter-quotes": "^1.0.3",
+    "eslint": "^2.11.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-bdd": "^2.1.0",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.3",
+    "eslint-plugin-mocha": "^3.0.0",
+    "eslint-plugin-react": "^5.1.1",
+    "mocha": "^2.5.3"
+  }
+}
