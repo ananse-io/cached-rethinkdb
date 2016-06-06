@@ -17,5 +17,10 @@
       "BlockComment": 0,
       "LineComment": 0
     }
+  },
+  "lineBreak": {
+    "before": {
+      "EndOfFile": 2
+    }
   }
 }

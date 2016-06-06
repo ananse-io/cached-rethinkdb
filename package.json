@@ -4,8 +4,8 @@
   "description": "Redis-cached rethinkDB",
   "main": "./lib/cached-database.js",
   "scripts": {
-    "test": "mocha",
-    "coverage": "istanbul _mocha"
+    "test": "mkdir -p logs && node_modules/mocha/bin/mocha test/cached-database.test.js",
+    "coverage": "mkdir -p logs && istanbul cover node_modules/mocha/bin/_mocha test/cached-database.test.js"
   },
   "author": "Beda Tse <beda@cow.hk>",
   "repository": {
@@ -16,14 +16,18 @@
   "dependencies": {
     "bluebird": "^3.4.0",
     "redis": "^2.6.1",
-    "rethinkdb": "^2.3.2"
+    "rethinkdb": "^2.3.2",
+    "seamless-immutable": "^6.1.0",
+    "uuid": "^2.0.2"
   },
   "devDependencies": {
+    "bunyan": "^1.8.1",
     "chai": "^3.5.0",
     "esformatter": "^0.9.4",
     "esformatter-add-trailing-commas": "^1.1.0",
     "esformatter-curly": "0.0.1",
     "esformatter-quotes": "^1.0.3",
+    "esformatter-eol-last": "^1.0.0",
     "eslint": "^2.11.1",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-bdd": "^2.1.0",
