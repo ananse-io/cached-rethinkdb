@@ -10,7 +10,7 @@
   "author": "Beda Tse <beda@cow.hk>",
   "repository": {
     "type": "git",
-    "url": "bitbucket:ananse/opensource-cachedb.git"
+    "url": "git@github.com:ananse-io/cached-rethinkdb.git"
   },
   "license": "Apache-2.0",
   "dependencies": {
