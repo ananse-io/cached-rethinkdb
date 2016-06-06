@@ -560,6 +560,14 @@ describe('Cached RethinkDB', () => {
   }));
 
   // CRUD functions
+  // load
+  it('should fail to load enntry via load operation without uuid', () => cachedDb.load({ id: {} }).then((entry) => {
+    expect(entry).to.not.exist;
+  }).catch((err) => {
+    expect(err).to.be.instanceof(Error);
+    expect(err).to.have.deep.property('message', 'uuid cannot be undefined or null');
+  }));
+
   // create
   it('should fail to create entry via CRUD operation without entry', () => cachedDb.create({ }).then((entry) => {
     expect(entry).to.not.exist;
@@ -574,6 +582,7 @@ describe('Cached RethinkDB', () => {
     expect(entry).to.deep.equal(newEntry);
   }));
 
+  // retrieve
   it('should fail to retrieve entry via CRUD operation without uuid', () => cachedDb.retrieve({ }).then((entry) => {
     expect(entry).to.not.exist;
   }).catch((err) => {
@@ -596,6 +605,7 @@ describe('Cached RethinkDB', () => {
     expect(entry).to.deep.equal(newEntry);
   }));
 
+  // update
   it('should fail to update entry via CRUD operation properly without uuid', () => cachedDb.update({ id: {} }).then((entry) => {
     expect(entry).to.not.exist;
   }).catch((err) => {
@@ -617,6 +627,14 @@ describe('Cached RethinkDB', () => {
     expect(entry).to.have.deep.property('nested.custom', 'world');
     newEntry.nested.custom = 'world';
     expect(entry).to.deep.equal(newEntry);
+  }));
+
+  // delete
+  it('should fail to delete entry via CRUD operation without uuid', () => cachedDb.delete({ id: {} }).then((id) => {
+    expect(id).to.not.exist;
+  }).catch((err) => {
+    expect(err).to.be.instanceof(Error);
+    expect(err).to.have.deep.property('message', 'uuid cannot be undefined or null');
   }));
 
   it('should be able to delete inexist entry via CRUD operation properly', () => cachedDb.delete({ id: stdInexistId }).then((id) => {
