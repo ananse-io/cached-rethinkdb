@@ -4,8 +4,8 @@
   "description": "Redis-cached rethinkDB",
   "main": "./lib/cached-database.js",
   "scripts": {
-    "test": "mkdir -p logs && node_modules/mocha/bin/mocha test/cached-database.test.js",
-    "coverage": "mkdir -p logs && istanbul cover node_modules/mocha/bin/_mocha test/cached-database.test.js"
+    "test": "mkdir -p logs && node_modules/mocha/bin/mocha",
+    "coverage": "mkdir -p logs && istanbul cover node_modules/mocha/bin/_mocha"
   },
   "author": "Beda Tse <beda@ananse.io>",
   "repository": {
