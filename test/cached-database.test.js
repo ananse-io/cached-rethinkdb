@@ -29,7 +29,7 @@ const logger = bunyan.createLogger({
     {
       level: 'info',
       type: 'file',
-      path: 'logs/unittest-info.log',
+      path: 'unittest.log',
     }, {
       level: 'trace',
       type: 'raw',
