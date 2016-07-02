@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "6"
+
+addons:
+  code_climate:
+    repo_token: 5939b9de3bc218e6efd7aa2366bd79925d5d54c9ece2a373cbce99fdfd6640e6
+
+services:
+  - redis-server
+
+before_install:
+  - echo "deb http://download.rethinkdb.com/apt `lsb_release -cs` main" | sudo tee /etc/apt/sources.list.d/rethinkdb.list
+  - wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
+  - sudo apt-get update
+  - sudo apt-get install rethinkdb
+  - nohup bash -c "rethinkdb &"
+  - sleep 5
+
+after_script:
+  - npm install -g codeclimate-test-reporter
+  - CODECLIMATE_REPO_TOKEN=5939b9de3bc218e6efd7aa2366bd79925d5d54c9ece2a373cbce99fdfd6640e6 codeclimate-test-reporter < coverage/lcov.info
