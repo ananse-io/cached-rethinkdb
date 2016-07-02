@@ -1,3 +1,8 @@
+[![Build](https://travis-ci.org/ananseio/cached-rethinkdb.svg)](https://travis-ci.org/ananseio/bunyan-nokafka)
+[![Code Climate](https://codeclimate.com/github/ananseio/cached-rethinkdb/badges/gpa.svg)](https://codeclimate.com/github/ananseio/bunyan-nokafka)
+[![Test Coverage](https://codeclimate.com/github/ananseio/cached-rethinkdb/badges/coverage.svg)](https://codeclimate.com/github/ananseio/bunyan-nokafka/coverage)
+[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+
 # Cached RethinkDB
 Redis-cached RethinkDB 
 
