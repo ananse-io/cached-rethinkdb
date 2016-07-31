@@ -342,7 +342,7 @@ describe('Cached RethinkDB', () => {
 
   it('should be able to generateUUID properly', () => cachedDbCustom.generateUUID({ }).then((genUUID) => {
     expect(genUUID).to.exist;
-    expect(genUUID.startsWith(testTableCustomPrefix)).to.be.true;
+    expect(genUUID[testTableCustomUUID].startsWith(testTableCustomPrefix)).to.be.true;
   }));
 
   // REDIS CACHE FUNCTIONS
@@ -572,7 +572,7 @@ describe('Cached RethinkDB', () => {
   it('should fail to create entry via CRUD operation without entry', () => cachedDb.create({ }).then((entry) => {
     expect(entry).to.not.exist;
   }).catch((err) => {
-    expect(err).to.be.instanceof(TypeError);
+    expect(err).to.be.instanceof(Error);
   }));
 
   it('should be able to create entry via CRUD operation properly', () => cachedDb.create({ entry: entryWithoutUUID }).then((entry) => {
